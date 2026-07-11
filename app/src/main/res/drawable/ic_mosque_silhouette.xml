@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="600dp"
+    android:height="200dp"
+    android:viewportWidth="600"
+    android:viewportHeight="200">
+
+    <!-- Mosque Silhouettes in ultra-subtle green tint to blend with background -->
+    <!-- Left Minaret -->
+    <path
+        android:fillColor="#0E012B1E"
+        android:pathData="M 40,200 L 40,80 L 35,80 L 35,70 L 40,70 L 40,50 L 32,50 L 32,45 L 40,45 L 40,30 L 43,20 L 45,30 L 45,45 L 53,45 L 53,50 L 45,50 L 45,70 L 50,70 L 50,80 L 45,80 L 45,200 Z" />
+
+    <!-- Center Left Small Dome -->
+    <path
+        android:fillColor="#0E012B1E"
+        android:pathData="M 80,200 C 80,140 140,140 140,200 Z" />
+
+    <!-- Center Main Large Dome -->
+    <path
+        android:fillColor="#15012B1E"
+        android:pathData="M 180,200 C 180,100 320,100 320,200 Z" />
+    
+    <!-- Dome Crescent Pin -->
+    <path
+        android:fillColor="#1FD4AF37"
+        android:pathData="M 248,110 L 252,110 L 250,85 Z" />
+
+    <!-- Center Right Small Dome -->
+    <path
+        android:fillColor="#0E012B1E"
+        android:pathData="M 360,200 C 360,130 430,130 430,200 Z" />
+
+    <!-- Right Minaret -->
+    <path
+        android:fillColor="#12012B1E"
+        android:pathData="M 490,200 L 490,60 L 485,60 L 485,50 L 490,50 L 490,30 L 482,30 L 482,25 L 490,25 L 490,10 L 493,0 L 495,10 L 495,25 L 503,25 L 503,30 L 495,30 L 495,50 L 500,50 L 500,60 L 495,60 L 495,200 Z" />
+</vector>

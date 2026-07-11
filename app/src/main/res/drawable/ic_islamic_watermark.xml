@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="400dp"
+    android:viewportWidth="400"
+    android:viewportHeight="400">
+
+    <!-- Outer Decorative Thin Circle -->
+    <path
+        android:pathData="M 200, 20 A 180,180 0 1,1 199.9,20 Z"
+        android:strokeColor="#1F01401B"
+        android:strokeWidth="1.5" />
+
+    <!-- Ornate Inner Circle -->
+    <path
+        android:pathData="M 200, 40 A 160,160 0 1,1 199.9,40 Z"
+        android:strokeColor="#1FD4AF37"
+        android:strokeWidth="2"
+        android:strokeLineCap="round" />
+
+    <!-- 8-Point Geometric Star 1 -->
+    <path
+        android:pathData="M 200,50 L 306,156 L 350,200 L 306,244 L 200,350 L 94,244 L 50,200 L 94,156 Z"
+        android:strokeColor="#1F01401B"
+        android:strokeWidth="1.5" />
+
+    <!-- 8-Point Geometric Star 2 (Rotated 45 degrees) -->
+    <path
+        android:pathData="M 200,50 L 244,156 L 350,200 L 244,244 L 200,350 L 156,244 L 50,200 L 156,156 Z"
+        android:strokeColor="#1FD4AF37"
+        android:strokeWidth="1.5" />
+
+    <!-- Inner Small Star -->
+    <path
+        android:pathData="M 200,100 A 100,100 0 1,1 199.9,100 Z"
+        android:strokeColor="#1F01401B"
+        android:strokeWidth="1" />
+
+    <!-- Core Emblem Star -->
+    <path
+        android:pathData="M 200,150 L 215,185 L 250,200 L 215,215 L 200,250 L 185,215 L 150,200 L 185,185 Z"
+        android:strokeColor="#1FD4AF37"
+        android:strokeWidth="2"
+        android:fillColor="#0D01401B" />
+</vector>

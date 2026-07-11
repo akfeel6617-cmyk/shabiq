@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style for Madrasa Name -->
+    <style name="PosterMadrasaText">
+        <item name="android:textColor">@color/islamic_gold_light</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Style for Hadith Text -->
+    <style name="PosterHadithText">
+        <item name="android:textColor">@color/hadith_text_color</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingMultiplier">1.4</item>
+    </style>
+
+    <!-- Style for Reference Text -->
+    <style name="PosterReferenceText">
+        <item name="android:textColor">@color/islamic_gold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Style for Muhtamim Name -->
+    <style name="PosterOrganizerText">
+        <item name="android:textColor">@color/islamic_green_dark</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Style for Date Card Headers -->
+    <style name="DateCardHeader">
+        <item name="android:textColor">@color/islamic_green_dark</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/date_card_header_bg</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+    </style>
+
+    <!-- Style for Date Card Body Text -->
+    <style name="DateCardBody">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+</resources>

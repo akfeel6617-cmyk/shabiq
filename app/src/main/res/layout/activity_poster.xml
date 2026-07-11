@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://tools.android.com/apk/res/tools"
+    android:id="@+id/poster_root"
+    android:layout_width="1080px"
+    android:layout_height="1350px"
+    android:background="@drawable/poster_background"
+    android:padding="30px">
+
+    <!-- Vertical Guideline to split Left Content and Right Date Panel (exactly like reference) -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.72" />
+
+    <!-- ================= LEFT AREA BACKGROUNDS ================= -->
+
+    <!-- Elegant Center Watermark -->
+    <ImageView
+        android:id="@+id/iv_watermark"
+        android:layout_width="550px"
+        android:layout_height="550px"
+        android:alpha="0.25"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_islamic_watermark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical" />
+
+    <!-- Bottom Mosque Silhouette Backdrop -->
+    <ImageView
+        android:id="@+id/iv_mosque"
+        android:layout_width="0px"
+        android:layout_height="220px"
+        android:alpha="0.20"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_mosque_silhouette"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical" />
+
+
+    <!-- ================= LEFT AREA: HEADER SECTION ================= -->
+
+    <!-- Ornate Green Title Banner Container for Madrasah Logo & Name -->
+    <LinearLayout
+        android:id="@+id/header_banner_container"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24px"
+        android:layout_marginHorizontal="30px"
+        android:background="@drawable/header_banner_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="36px"
+        android:paddingVertical="20px"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical">
+
+        <!-- Madrasah Logo Frame -->
+        <FrameLayout
+            android:id="@+id/logo_container"
+            android:layout_width="96px"
+            android:layout_height="96px"
+            android:layout_gravity="center">
+
+            <!-- Logo Image View -->
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:visibility="gone" />
+
+            <!-- Logo Fallback Text View (Styled with Gold Border) -->
+            <TextView
+                android:id="@+id/tv_logo_fallback"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/logo_fallback_bg"
+                android:gravity="center"
+                android:text="شبیق"
+                android:textColor="@color/islamic_gold"
+                android:textSize="28px"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <!-- Madrasah Name (placed inside the header banner container) -->
+        <TextView
+            android:id="@+id/tv_madrasah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:gravity="center"
+            android:text="جامعہ اسلامیہ دارالعلوم"
+            android:textColor="@color/islamic_gold_light"
+            android:textSize="34px"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <!-- ================= LEFT AREA: CENTER HADITH & REFERENCE ================= -->
+
+    <!-- Hadith Text with auto-scaling behavior centered inside the Left Area -->
+    <TextView
+        android:id="@+id/tv_hadith"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40px"
+        android:gravity="center"
+        android:paddingHorizontal="20px"
+        android:textColor="@color/hadith_text_color"
+        android:textSize="48px"
+        android:textStyle="bold"
+        android:lineSpacingMultiplier="1.4"
+        app:layout_constraintBottom_toTopOf="@id/tv_reference"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_banner_container"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="عَنْ عَبْدِ اللَّهِ بْنِ عَمْرٍو أَنَّ النَّبِيَّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ كَانَ يَتَعَوَّذُ مِنْ أَرْبَعٍ..." />
+
+    <!-- Hadith Reference (Hawala) in a highly styled pill capsule just like the reference layout -->
+    <TextView
+        android:id="@+id/tv_reference"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
+        android:background="@drawable/reference_pill_bg"
+        android:gravity="center"
+        android:paddingHorizontal="36px"
+        android:paddingVertical="12px"
+        android:textColor="@color/islamic_gold_light"
+        android:textSize="24px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/divider_bottom"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_hadith"
+        tools:text="سنن نسائی، حدیث: 5444" />
+
+
+    <!-- ================= LEFT AREA: BOTTOM SECTION ================= -->
+
+    <!-- Clean Thin Golden Bottom Divider -->
+    <View
+        android:id="@+id/divider_bottom"
+        android:layout_width="240px"
+        android:layout_height="4px"
+        android:layout_marginBottom="20px"
+        android:background="@color/islamic_gold"
+        app:layout_constraintBottom_toTopOf="@id/tv_organizer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical" />
+
+    <!-- Organizer (Muhtamim) Name Only -->
+    <TextView
+        android:id="@+id/tv_organizer"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40px"
+        android:gravity="center"
+        android:text="محمد شرف الدین"
+        android:textColor="@color/islamic_green_dark"
+        android:textSize="34px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical" />
+
+
+    <!-- ================= RIGHT AREA: DATE PANEL ================= -->
+
+    <LinearLayout
+        android:id="@+id/date_panel_container"
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:layout_marginStart="20px"
+        android:background="@drawable/date_panel_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20px"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Header Greeting Banner (matching reference design) -->
+        <TextView
+            android:id="@+id/tv_greeting_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header_banner_bg"
+            android:gravity="center"
+            android:paddingHorizontal="10px"
+            android:paddingVertical="14px"
+            android:text="السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ"
+            android:textColor="@color/white"
+            android:textSize="18px"
+            android:textStyle="bold" />
+
+        <!-- Ornate Circular Medallion Emblem -->
+        <FrameLayout
+            android:layout_width="130px"
+            android:layout_height="130px"
+            android:layout_marginTop="24px">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_islamic_medallion" />
+        </FrameLayout>
+
+        <!-- Ornate Vertical Divider Dots -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16px"
+            android:layout_marginBottom="16px"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="12px"
+                android:layout_height="12px"
+                android:layout_margin="4px"
+                android:background="@drawable/circle_gold_badge" />
+            <View
+                android:layout_width="12px"
+                android:layout_height="12px"
+                android:layout_margin="4px"
+                android:background="@drawable/circle_gold_badge" />
+            <View
+                android:layout_width="12px"
+                android:layout_height="12px"
+                android:layout_margin="4px"
+                android:background="@drawable/circle_gold_badge" />
+        </LinearLayout>
+
+        <!-- Stacked Date Cards (Weight split to fill container perfectly) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="5">
+
+            <!-- Card 1: Day Name (Urdu + English stacked) -->
+            <LinearLayout
+                android:id="@+id/card_day_container"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:layout_marginBottom="12px"
+                android:background="@drawable/date_card_container_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8px">
+
+                <TextView
+                    android:id="@+id/tv_day_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="32px"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    tools:text="جمعرات" />
+
+                <TextView
+                    android:id="@+id/tv_day_name_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4px"
+                    android:textColor="@color/islamic_gold_light"
+                    android:textSize="18px"
+                    android:textStyle="normal"
+                    android:gravity="center"
+                    tools:text="Thursday" />
+            </LinearLayout>
+
+            <!-- Card 2: Hijri Month (Arabic text) -->
+            <LinearLayout
+                android:id="@+id/card_hijri_month_container"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:layout_marginBottom="12px"
+                android:background="@drawable/date_card_container_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10px">
+
+                <TextView
+                    android:id="@+id/tv_hijri_month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="32px"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    tools:text="ذو الحجة" />
+            </LinearLayout>
+
+            <!-- Card 3: Hijri Day & Year Box Row -->
+            <LinearLayout
+                android:id="@+id/card_hijri_day_year_row"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:layout_marginBottom="12px"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- Left Box: Hijri Year -->
+                <FrameLayout
+                    android:id="@+id/box_hijri_year"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6px"
+                    android:background="@drawable/date_box_border">
+
+                    <TextView
+                        android:id="@+id/tv_hijri_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/white"
+                        android:textSize="22px"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        tools:text="١٤٤٢ هـ" />
+                </FrameLayout>
+
+                <!-- Right Box: Hijri Day -->
+                <FrameLayout
+                    android:id="@+id/box_hijri_day"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6px"
+                    android:background="@drawable/date_box_border">
+
+                    <TextView
+                        android:id="@+id/tv_hijri_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/white"
+                        android:textSize="28px"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        tools:text="١١" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- Card 4: Gregorian Month (English text) -->
+            <LinearLayout
+                android:id="@+id/card_greg_month_container"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:layout_marginBottom="12px"
+                android:background="@drawable/date_card_container_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10px">
+
+                <TextView
+                    android:id="@+id/tv_greg_month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="32px"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    tools:text="JULY" />
+            </LinearLayout>
+
+            <!-- Card 5: Gregorian Day & Year Box Row -->
+            <LinearLayout
+                android:id="@+id/card_greg_day_year_row"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- Left Box: Gregorian Year -->
+                <FrameLayout
+                    android:id="@+id/box_greg_year"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6px"
+                    android:background="@drawable/date_box_border">
+
+                    <TextView
+                        android:id="@+id/tv_greg_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/white"
+                        android:textSize="22px"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        tools:text="2021" />
+                </FrameLayout>
+
+                <!-- Right Box: Gregorian Day -->
+                <FrameLayout
+                    android:id="@+id/box_greg_day"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6px"
+                    android:background="@drawable/date_box_border">
+
+                    <TextView
+                        android:id="@+id/tv_greg_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/white"
+                        android:textSize="28px"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        tools:text="22" />
+                </FrameLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ================= COMPATIBILITY CHANNELS ================= -->
+    <!-- Hidden compatibility text views to prevent NullPointerExceptions in the compiler -->
+    <!-- these views are required by findViewByid but do not clutter our beautiful canvas -->
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_hijri_month_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_hijri_day_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_greg_month_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_greg_day_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Unused card container / badges compatibility handles -->
+        <View android:id="@+id/card_greg_container" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <View android:id="@+id/card_hijri_container" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <View android:id="@+id/card_lesson_container" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <View android:id="@+id/tv_day_badge_container" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_day_badge_text" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <View android:id="@+id/tv_greg_day_container" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <View android:id="@+id/tv_hijri_day_container" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <View android:id="@+id/tv_signature_day_container" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_brand_lbl" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_lesson_title" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_today_label" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
