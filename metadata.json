@@ -1,0 +1,6 @@
+{
+  "name": "SHABIQ",
+  "description": "Professional Islamic Hadith poster generator with support for Arabic, Urdu, and English.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
